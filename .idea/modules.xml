@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/com-iot-domain/com-iot-domain.iml" filepath="$PROJECT_DIR$/com-iot-domain/com-iot-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com-iot-service/com-iot-service.iml" filepath="$PROJECT_DIR$/com-iot-service/com-iot-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com-iot-utils/com-iot-utils.iml" filepath="$PROJECT_DIR$/com-iot-utils/com-iot-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com-iot-web/com-iot-web.iml" filepath="$PROJECT_DIR$/com-iot-web/com-iot-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iot_server.iml" filepath="$PROJECT_DIR$/iot_server.iml" />
+    </modules>
+  </component>
+</project>

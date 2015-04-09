@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="com-iot-web:war">
+    <output-path>$PROJECT_DIR$/com-iot-web/target</output-path>
+    <root id="archive" name="com-iot-web.war">
+      <element id="artifact" artifact-name="com-iot-web:war exploded" />
+    </root>
+  </artifact>
+</component>
