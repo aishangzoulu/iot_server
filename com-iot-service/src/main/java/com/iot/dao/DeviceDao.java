@@ -11,6 +11,13 @@ import java.util.List;
  */
 public interface DeviceDao {
     /**
+     * 通过id得到设备
+     * @param id
+     * @return
+     */
+    Device get(@Param("id") Long id);
+
+    /**
      * 添加设备
      *
      * @param device

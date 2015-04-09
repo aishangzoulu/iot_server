@@ -16,6 +16,12 @@ public class DeviceServiceImpl extends ServiceBase implements DeviceService {
     private DeviceDao deviceDao;
 
     @Override
+    public Device get(Long id){
+        Device device=deviceDao.get(id);
+        return device;
+    }
+
+    @Override
     public Long add(Device device) {
         long id = GenerateId();
         device.setId(id);

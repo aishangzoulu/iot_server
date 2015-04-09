@@ -35,6 +35,44 @@ public class DeviceController extends ControllerBase {
      *
      * @return
      */
+    @RequestMapping(value = "get", method = RequestMethod.GET, produces = CommonUtils.MediaTypeJSON)
+    @ResponseBody
+    public String get(HttpServletRequest request) {
+        Result<Device> result = new Result<Device>();
+        try {
+            String idStr=request.getParameter("id");
+            Long id=Long.parseLong(idStr);
+            //String json = getRequestEntity(request);
+            //Long id = JsonUtils.fromJson(json, Long.class);
+            if (id != null) {
+                Device device = deviceService.get(id);
+                if (device != null) {
+                    result.setCode(ResultCode.USER_OK);
+                    result.setData(device);
+                } else {
+                    result.setCode(ResultCode.USER_FAILURE);
+                    result.setMsg("无此设备！");
+                }
+            } else {
+                result.setCode(ResultCode.ERROR);
+                result.setMsg("参数错误！");
+            }
+        } catch (Exception ex) {
+            result.setMsg("无此设备！");
+            logger.error(ex);
+        }
+
+        result.setTimestamp(new Date());
+        Type deviceType = new TypeToken<Result<Device>>() {
+        }.getType();
+        return JsonUtils.toJson(result, deviceType);
+    }
+
+    /**
+     * 插入设备
+     *
+     * @return
+     */
     @RequestMapping(value = "add", method = RequestMethod.POST, produces = CommonUtils.MediaTypeJSON)
     @ResponseBody
     public String add(HttpServletRequest request) {

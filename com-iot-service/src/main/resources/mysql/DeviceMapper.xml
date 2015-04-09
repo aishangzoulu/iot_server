@@ -13,6 +13,13 @@
 		id,name,status,uid,createdTime,lastUpdatedTime
 	</sql>
 
+	<select id="get" parameterType="Long" resultMap="DeviceMap">
+		select
+		<include refid="sqlColumns" />
+		from device
+		where id=#{id}
+	</select>
+
 	<insert id="add" parameterType="Device">
 		insert into device (<include refid="sqlColumns" />)
 		values (#{id}, #{name}, #{status},#{uid},#{createdTime},#{lastUpdatedTime})
